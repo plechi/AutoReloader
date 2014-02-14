@@ -296,9 +296,9 @@ public class AutoReloaderGUI extends javax.swing.JFrame implements ChangeListene
 
   @Override
   public void onChange(File file, ChangeType type) {
-    LOG.info("Send reload...");
     long currentTime = System.currentTimeMillis();
     if ((lastTime + 5000) < currentTime) {
+      LOG.info("Send reload...");
       server.updateClients();
       lastTime = currentTime;
     }
